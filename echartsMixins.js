@@ -43,7 +43,7 @@ export default {
         title: {
           text: title,
           left: 'center',
-          top: 20,
+          top: 10,
           textStyle: {
             color: '#6688bf'
           }
@@ -52,7 +52,7 @@ export default {
           trigger: 'item'
         },
         legend: {
-          top: 60,
+          top: 40,
           left: 'center'
         },
         series: [
@@ -64,11 +64,17 @@ export default {
             data: data.sort(function(a, b) {
               return a.value - b.value
             }),
-            roseType: 'radius',
             animationType: 'scale',
             animationEasing: 'elasticOut',
             animationDelay: function(idx) {
               return Math.random() * 200
+            },
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 4,
+                shadowOffsetX: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+              }
             }
           }
         ]
